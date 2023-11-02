@@ -1,0 +1,11 @@
+<page-header (menuClicked)="sideNav.toggle()"></page-header>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" #sideNav closed class="mat-elevation-z6">
+    <div *ngIf="loggedIn()"><side-nav></side-nav></div>
+    <div *ngIf="!loggedIn()"><app-side-nav1></app-side-nav1></div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
